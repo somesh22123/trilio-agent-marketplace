@@ -11,10 +11,10 @@ owner:
   email: platform@trilio.io
 
 plugins:
-  - name: trilio-tsr-guide
-    description: Check DR readiness and plan failovers with Trilio Site Recovery (TSR).
-    repo: somesh22123/tsr-k8s-skill
-    path: plugins/trilio-tsr-guide
-    ref: trilio-tsr-guide/v0.1.0
-    sha: 44fdc0a3c4755a9636c105f8736f05e33bcaf69e
+  - name: site-recovery-kubernetes
+    description: Check DR readiness and plan failovers with Trilio Site Recovery (TSR) for Kubernetes.
+    repo: somesh22123/site-recovery-kubernetes
+    path: plugins/site-recovery-kubernetes
+    ref: site-recovery-kubernetes/v0.1.0
+    sha: f878dc4fe59b61153973b915ff4a5d599707074c
     category: Developer Tools

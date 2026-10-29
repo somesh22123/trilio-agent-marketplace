@@ -10,7 +10,7 @@ The one place customers add to get every Trilio agent plugin. Owned by the
 
 ```sh
 claude plugin marketplace add somesh22123/trilio-agent-marketplace
-claude plugin install trilio-tsr-guide@trilio
+claude plugin install site-recovery-kubernetes@trilio
 ```
 
 **Codex**
@@ -19,7 +19,7 @@ claude plugin install trilio-tsr-guide@trilio
 codex plugin marketplace add somesh22123/trilio-agent-marketplace
 ```
 
-Then install `trilio-tsr-guide` from the `/plugins` browser.
+Then install `site-recovery-kubernetes` from the `/plugins` browser.
 
 ## How it works
 
@@ -33,11 +33,11 @@ Each entry uses a `git-subdir` source pinned to a release tag and its commit
 sha, so customers only ever get a tested, released version, and a moved tag
 can't change what they install.
 
-1. A SKU team tags a release in its own repo (e.g. `trilio-tsr-guide/v0.2.0`).
+1. A SKU team tags a release in its own repo (e.g. `site-recovery-kubernetes/v0.2.0`).
 2. The platform group bumps the entry:
    ```sh
    git clone https://github.com/somesh22123/trilio-agent-plugin-kit .pluginkit -b v1.0.0
-   python .pluginkit/pluginkit.py pin . trilio-tsr-guide trilio-tsr-guide/v0.2.0
+   python .pluginkit/pluginkit.py pin . site-recovery-kubernetes site-recovery-kubernetes/v0.2.0
    ```
 3. CI checks the generated files match `catalog.yaml` and that every entry's
    tag still exists, still points at the pinned sha, and ships manifests whose
@@ -48,4 +48,4 @@ can't change what they install.
 
 | Plugin | SKU | Source repo |
 | --- | --- | --- |
-| `trilio-tsr-guide` | Trilio Site Recovery | [tsr-k8s-skill](https://github.com/somesh22123/tsr-k8s-skill) |
+| `site-recovery-kubernetes` | Trilio Site Recovery | [site-recovery-kubernetes](https://github.com/somesh22123/site-recovery-kubernetes) |
