@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  KIT_REF: v1.0.0  # kit pin
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: somesh22123/trilio-agent-plugin-kit
+          ref: ${{ env.KIT_REF }}
+          path: .pluginkit
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Marketplace files match catalog.yaml, every entry resolves at its tag
+        run: python .pluginkit/pluginkit.py catalog --check --verify .

@@ -1,0 +1,20 @@
+# The Trilio agent plugin catalog. One entry per SKU plugin, pinned to a
+# released tag (and the commit it pointed at when pinned).
+#
+# Edit this file, then run:  python .pluginkit/pluginkit.py catalog .
+# To bump an entry:          python .pluginkit/pluginkit.py pin . <name> <name>/v<version>
+name: trilio
+displayName: Trilio
+description: Trilio agent plugins for every SKU. Add once, install any plugin.
+owner:
+  name: Trilio Platform Group
+  email: platform@trilio.io
+
+plugins:
+  - name: trilio-tsr-guide
+    description: Check DR readiness and plan failovers with Trilio Site Recovery (TSR).
+    repo: somesh22123/tsr-k8s-skill
+    path: plugins/trilio-tsr-guide
+    ref: trilio-tsr-guide/v0.1.0
+    sha: 44fdc0a3c4755a9636c105f8736f05e33bcaf69e
+    category: Developer Tools

@@ -1,0 +1,23 @@
+{
+  "name": "trilio",
+  "description": "Trilio agent plugins for every SKU. Add once, install any plugin.",
+  "owner": {
+    "name": "Trilio Platform Group",
+    "email": "platform@trilio.io"
+  },
+  "plugins": [
+    {
+      "name": "trilio-tsr-guide",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/somesh22123/tsr-k8s-skill.git",
+        "path": "plugins/trilio-tsr-guide",
+        "ref": "trilio-tsr-guide/v0.1.0",
+        "sha": "44fdc0a3c4755a9636c105f8736f05e33bcaf69e"
+      },
+      "description": "Check DR readiness and plan failovers with Trilio Site Recovery (TSR).",
+      "version": "0.1.0",
+      "category": "Developer Tools"
+    }
+  ]
+}

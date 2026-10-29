@@ -1,0 +1,30 @@
+# Re-checks every catalog entry against its release tag, so a deleted or moved
+# tag is caught before a customer hits it.
+name: nightly
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  KIT_REF: v1.0.0  # kit pin
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: somesh22123/trilio-agent-plugin-kit
+          ref: ${{ env.KIT_REF }}
+          path: .pluginkit
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python .pluginkit/pluginkit.py catalog --check --verify .

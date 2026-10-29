@@ -1,0 +1,23 @@
+{
+  "name": "trilio",
+  "interface": {
+    "displayName": "Trilio"
+  },
+  "plugins": [
+    {
+      "name": "trilio-tsr-guide",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/somesh22123/tsr-k8s-skill.git",
+        "path": "plugins/trilio-tsr-guide",
+        "ref": "trilio-tsr-guide/v0.1.0",
+        "sha": "44fdc0a3c4755a9636c105f8736f05e33bcaf69e"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
